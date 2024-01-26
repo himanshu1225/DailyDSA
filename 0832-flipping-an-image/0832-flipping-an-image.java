@@ -8,13 +8,12 @@ class Solution {
     
     private void flipInvert(int[] img){
         int n = img.length;
-        for(int i = 0; i < n/2; i++){
-            int temp = img[i];
-            img[i] = img[n-1-i];
-            img[n-1-i] = temp;
-        }
-        for(int i = 0; i < n; i++){
-            img[i] = Math.abs(img[i]-1);
+        int start = 0, end = n-1;
+        while(start <= end){
+            int temp = Math.abs(img[start]-1);
+            img[start] = Math.abs(img[end]-1);
+            img[end] = temp;
+            start++; end--;
         }
     }
 }
