@@ -9,7 +9,9 @@ class Solution {
         Arrays.sort(nums);
         int sum = 0;
         for(int i = 0; i < nums.length; i=i+2){
-            sum += Math.min(nums[i], nums[i+1]);
+            // sum += Math.min(nums[i], nums[i+1]);
+//             when we sort it we dont need to take min also, always add ithe element as that will be min
+            sum += nums[i];
         }
         return sum;
     }
